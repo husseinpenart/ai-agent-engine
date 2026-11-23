@@ -1,0 +1,103 @@
+﻿# ==================== Emochi — .gitignore ====================
+# ترکیبی از یک پایه‌ی کاملاً استاندارد ASP.NET Core و موارد مخصوص این پروژه
+
+# ---------- پوشه‌های ساخته‌شده توسط ساخت/اجرا ----------
+bin/
+obj/
+publish/
+out/
+artifacts/
+*.user
+
+# ---------- پوشه‌های اجرای محلی و لاگ ----------
+*.db
+*.db-shm
+*.db-wal
+*.log
+logs/
+*.vscode/
+.idea/
+.vs/
+**/.vs/
+.vsconfig
+
+# ---------- تنظیمات محلی: appsettings.local.json و prod.json ----------
+appsettings.*.local.json
+appsettings.*.Development.json
+appsettings.*.Production.json
+appsettings.local.json
+appsettings.Development.json
+appsettings.Production.json
+# (اگر کلید/رمز در همینا ست، حذفشون؛ وگرنه نمی‌ذاریم اذیت بشن)
+appsettings.private*.json
+
+# ---------- کدوم appsettings می‌مونه در گیت؟ ----------
+# فقط appsettings.json و appsettings.*.json که مشترک هستن.
+!appsettings.json
+# (Example رو نگه می‌داری و بقیه رو فیلتر می‌کنی)
+
+# ---------- Storage و مدل‌های محلی (Emochi) ----------
+Storage/
+storage/
+!Storage/.gitkeep
+!storage/.gitkeep
+
+# مدل‌ها و تصاویر تولیدی
+*.onnx
+*.gguf
+*.safetensors
+*.bin
+*.ot
+*.model
+*.pt
+*.pth
+*.ckpt
+*.weights
+*.preproc
+*.onnx.data
+# Better: اگه کل پوشه Storage رو نمی‌خوای نگه داری، خط «!!Storage» رو بردار.
+# اگه نمی‌خوای مدل بیاد توی گیت ولی تصویر بگیره، اینارو فیلترش کن:
+# keep-imgs/   (یا هر چی که می‌خوای)
+
+# ---------- مهاجرت‌ها و DB داده‌های محلی ----------
+Migrations/  # (اگر بخوای Migration های اولیه تو گیت نباشن؛ معمولاً نگه می‌دارید)
+# اینجا اگه Migration ها مهم هستن برشون ندار — فقط کدوم رو حذف شد، دشمن سرم
+
+# ---------- .NET Core عمومی ----------
+*.nupkg
+*.snupkg
+nuget.config.bak
+*.nupkg.metadata
+.jetbrains/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ---------- تنظیمات بازهای توسعه‌ی محلی (Exclude فقط وقتی که برای همه لازمه) ----------
+**/*.userprefs
+**/bin/
+**/obj/
+**/*.suo
+**/*.user
+
+# ---------- فایل‌های موقتی سیستم ----------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+*~$
+*.swp
+
+# ---------- امنیت: کلید‌ها و توکن‌ها ----------
+*.pem
+*.key
+*.pfx
+*.crt
+.env
+*.env
+secrets.json
+secrets.*.json
+*.local
+*.development.local
+docker-compose.override.yml.bak

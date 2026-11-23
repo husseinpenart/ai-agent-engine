@@ -1,23 +1,9 @@
 # Local agent backend
 
-ASP.NET Core exposes `GET /api/health` and `POST /api/agent/chat` on `http://127.0.0.1:5000`. Chat accepts the Tauri client's messages and tool definitions and streams `text`, `thinking`, `tool_call`, `error`, and `done` SSE events. The client runs tools and handles permission prompts; this backend does not execute tools or store conversation history. The current frontend stores its sessions in localStorage.
+The Tauri frontend connects to the ASP.NET API, for example at `https://localhost:44382` when using the IIS Express profile. The backend starts a private `llama-server` process on an available loopback port on the first chat request. This process reads the configured GGUF directly; the Ollama service and model import are not required. The executable and CUDA libraries currently come from the installed Ollama directory and can be changed in `appsettings.json`.
 
-## Setup
+Start the backend with the IIS Express profile in Visual Studio, or run `dotnet run --no-launch-profile` and configure the frontend to use `http://localhost:5000`. In development, Swagger UI is available under `/swagger`. `GET /api/health` reports API availability; it does not load the model. `POST /api/agent/chat` streams SSE events and can take time on its first request while the model loads.
 
-1. Start Ollama locally. Import the GGUF once from this directory:
+`appsettings.json` configures model and executable paths, CUDA backend directory, context size, CPU threads, GPU layers, output length and idle timeout. Defaults are one inference at a time, four CPU threads, 4096 context tokens, eight GPU layers and unloading after five idle minutes. The 17.7 GB model does not fit in 8 GB VRAM and uses system RAM; actual memory use and speed depend on the system. Close other memory-heavy applications and monitor RAM and VRAM when first loading it. Stopping the backend normally also stops the model process.
 
-   ```powershell
-   ollama create local-qwen-coder -f Modelfile
-   ```
-
-   Importing can require approximately another copy of the 17.7 GB model in Ollama's model storage. Ensure the disk has enough free space. Ollama must support this GGUF quantization and its chat template; compatibility with this particular file has not been verified.
-
-2. Run the API:
-
-   ```powershell
-   dotnet run --no-launch-profile
-   ```
-
-The model name, server address, context window, GPU layers, CPU threads, output limit and idle unloading time are configurable in `appsettings.json`, or with standard .NET configuration environment variables such as `Model__GpuLayers`. Defaults allow one active inference, four CPU threads, 4096 context tokens, and eight GPU layers. The model is much larger than 8 GB VRAM, so inference uses system RAM as well and may be slow. These values are starting points, not memory guarantees; monitor RAM and VRAM on the first run and reduce GPU layers or context if necessary. Ollama must be running separately; this API does not launch or install it.
-
-Only the listed local development and Tauri origins are allowed by CORS. The API is intended for local use and has no authentication; do not expose it to a network. Health reports API availability, not whether Ollama or the model is ready. The supplied GGUF path is local to this machine and can be changed in `Modelfile` before import.
+The API is intended for local use and has no authentication; do not expose it to a network. The client executes tools and manages permissions; desktop conversation storage is managed by the frontend. The chat model is text-only.

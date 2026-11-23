@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BBADEDA8-D2F1-41EE-9E47-8D3A6FD532E6}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\modelfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{BBADEDA8-D2F1-41EE-9E47-8D3A6FD532E6}|ai-agent.csproj|solutionrelative:modelfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBADEDA8-D2F1-41EE-9E47-8D3A6FD532E6}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BBADEDA8-D2F1-41EE-9E47-8D3A6FD532E6}|ai-agent.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\modelfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:modelfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBADEDA8-D2F1-41EE-9E47-8D3A6FD532E6}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBADEDA8-D2F1-41EE-9E47-8D3A6FD532E6}|ai-agent.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBADEDA8-D2F1-41EE-9E47-8D3A6FD532E6}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\ollamaclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBADEDA8-D2F1-41EE-9E47-8D3A6FD532E6}|ai-agent.csproj|solutionrelative:services\\ollamaclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBADEDA8-D2F1-41EE-9E47-8D3A6FD532E6}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\modeloptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBADEDA8-D2F1-41EE-9E47-8D3A6FD532E6}|ai-agent.csproj|solutionrelative:services\\modeloptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\modeloptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\modeloptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,63 +22,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Modelfile",
               "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Modelfile",
               "RelativeDocumentMoniker": "Modelfile",
               "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Modelfile",
               "RelativeToolTip": "Modelfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-11-23T18:16:06.932Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-11-23T18:15:59.195Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-23T18:15:55.561Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OllamaClient.cs",
-              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\OllamaClient.cs",
-              "RelativeDocumentMoniker": "Services\\OllamaClient.cs",
-              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\OllamaClient.cs",
-              "RelativeToolTip": "Services\\OllamaClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-23T18:15:50.802Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "ModelOptions.cs",
               "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelOptions.cs",
               "RelativeDocumentMoniker": "Services\\ModelOptions.cs",
