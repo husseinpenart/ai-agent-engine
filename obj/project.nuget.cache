@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2tNhHE9H8yk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\ai-agent.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Husseinpenart\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.23.0\\microsoft.visualstudio.azure.containers.tools.targets.1.23.0.nupkg.sha512"
+  ],
+  "logs": []
+}
