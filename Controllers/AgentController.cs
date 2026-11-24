@@ -39,6 +39,7 @@ public sealed class AgentController(LocalModelClient client, VisionClient vision
         Response.Headers.CacheControl = "no-cache";
         await Send(new { type = "status", phase = "queued" }, cancellationToken);
         await gate.Semaphore.WaitAsync(cancellationToken);
+        var finished = false;
         try
         {
             var reports = new List<string>();
@@ -135,6 +136,7 @@ public sealed class AgentController(LocalModelClient client, VisionClient vision
             foreach (var call in parsedCalls)
                 await Send(new { type = "tool_call", id = call.Id, name = call.Name, args = incomplete ? JsonSerializer.SerializeToElement(new { }) : call.Args, error = incomplete ? "Tool call was incomplete or invalid and was not executed. Retry with much smaller chunks; use write_file for the first chunk and append_file for subsequent chunks." : null }, cancellationToken);
             await Send(new { type = "done", finishReason }, cancellationToken);
+            finished = complete;
         }
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested) { }
         catch (Exception exception)
@@ -143,7 +145,12 @@ public sealed class AgentController(LocalModelClient client, VisionClient vision
             if (!Response.HasStarted) { Response.StatusCode = 503; await Response.WriteAsJsonAsync(new { error = "Local model could not start: " + exception.Message }, cancellationToken); }
             else await Send(new { type = "error", message = "Local inference failed: " + exception.Message }, cancellationToken);
         }
-        finally { try { runtime.ScheduleStop(); } finally { gate.Semaphore.Release(); } }
+        finally
+        {
+            try { if (finished && !cancellationToken.IsCancellationRequested) runtime.ScheduleStop(); else runtime.Stop(); }
+            catch (Exception exception) { logger.LogError(exception, "Failed to stop the model after a request"); }
+            finally { gate.Semaphore.Release(); }
+        }
     }
 
     private async Task Send(object value, CancellationToken cancellationToken)

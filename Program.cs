@@ -16,6 +16,12 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy
     .WithOrigins("http://localhost:1420", "http://127.0.0.1:1420", "tauri://localhost", "http://tauri.localhost")
     .AllowAnyHeader().AllowAnyMethod()));
 var app = builder.Build();
+var modelRuntime = app.Services.GetRequiredService<ModelProcess>();
+app.Lifetime.ApplicationStopping.Register(() =>
+{
+    try { modelRuntime.Dispose(); }
+    catch (Exception exception) { app.Logger.LogError(exception, "Failed to stop the model during application shutdown"); }
+});
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
