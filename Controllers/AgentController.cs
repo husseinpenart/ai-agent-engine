@@ -10,6 +10,7 @@ namespace ai_agent.Controllers;
 public sealed class AgentController(LocalModelClient client, VisionClient vision, ModelProcess runtime, InferenceGate gate, ILogger<AgentController> logger) : ControllerBase
 {
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
+    private readonly SemaphoreSlim responseLock = new(1, 1);
 
     [HttpGet("/api/health")]
     public IActionResult Health() => Ok(new { status = "ok" });
@@ -38,10 +39,14 @@ public sealed class AgentController(LocalModelClient client, VisionClient vision
         Response.ContentType = "text/event-stream";
         Response.Headers.CacheControl = "no-cache";
         await Send(new { type = "status", phase = "queued" }, cancellationToken);
-        await gate.Semaphore.WaitAsync(cancellationToken);
+        using var heartbeatCancellation = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        var heartbeat = KeepAlive(heartbeatCancellation.Token);
+        var enteredGate = false;
         var finished = false;
         try
         {
+            await gate.Semaphore.WaitAsync(cancellationToken);
+            enteredGate = true;
             var reports = new List<string>();
             if (request.Images is { Count: > 0 })
             {
@@ -75,6 +80,8 @@ public sealed class AgentController(LocalModelClient client, VisionClient vision
             var emittedText = false;
             string? finishReason = null;
             var toolCalls = new SortedDictionary<int, (StringBuilder Id, StringBuilder Name, StringBuilder Arguments)>();
+            var highestToolIndex = -1;
+            var outOfOrder = false;
             try
             {
             while (await reader.ReadLineAsync(cancellationToken) is { } line)
@@ -94,6 +101,8 @@ public sealed class AgentController(LocalModelClient client, VisionClient vision
                         foreach (var call in calls.EnumerateArray())
                         {
                             var index = call.GetProperty("index").GetInt32();
+                            if (index < highestToolIndex) outOfOrder = true;
+                            highestToolIndex = Math.Max(highestToolIndex, index);
                             if (!toolCalls.TryGetValue(index, out var pending)) { pending = (new(), new(), new()); toolCalls.Add(index, pending); }
                             if (call.TryGetProperty("id", out var id) && id.ValueKind == JsonValueKind.String) pending.Id.Append(id.GetString());
                             if (call.TryGetProperty("function", out var function))
@@ -117,24 +126,15 @@ public sealed class AgentController(LocalModelClient client, VisionClient vision
                 finishReason = "interrupted";
             }
             if (finishReason == "length") logger.LogWarning("Model output reached its token or context limit; continuation or safe tool retry is required");
-            var parsedCalls = new List<(string Id, string Name, JsonElement Args, bool Invalid)>();
-            foreach (var call in toolCalls.Values)
-            {
-                if (call.Name.Length == 0) { await Send(new { type = "error", message = "Model returned an incomplete tool call without a tool name. Please retry with a smaller task." }, cancellationToken); return; }
-                var invalid = false;
-                JsonElement args;
-                try
-                {
-                    using var arguments = JsonDocument.Parse(call.Arguments.Length == 0 ? "{}" : call.Arguments.ToString());
-                    args = arguments.RootElement.Clone();
-                    invalid = args.ValueKind != JsonValueKind.Object;
-                }
-                catch (JsonException) { args = JsonSerializer.SerializeToElement(new { }); invalid = true; }
-                parsedCalls.Add((call.Id.Length == 0 ? Guid.NewGuid().ToString("N") : call.Id.ToString(), call.Name.ToString(), args, invalid));
-            }
-            var incomplete = finishReason is "length" or "interrupted" || parsedCalls.Any(call => call.Invalid);
-            foreach (var call in parsedCalls)
-                await Send(new { type = "tool_call", id = call.Id, name = call.Name, args = incomplete ? JsonSerializer.SerializeToElement(new { }) : call.Args, error = incomplete ? "Tool call was incomplete or invalid and was not executed. Retry with much smaller chunks; use write_file for the first chunk and append_file for subsequent chunks." : null }, cancellationToken);
+            var pendingCalls = toolCalls.Select(item => new PendingToolCall(item.Key, item.Value.Id.Length == 0 ? Guid.NewGuid().ToString("N") : item.Value.Id.ToString(), item.Value.Name.ToString(), item.Value.Arguments.ToString()));
+            var parsedCalls = ToolCallValidator.ParseBatch(pendingCalls, finishReason is "length" or "interrupted", outOfOrder);
+            var missingName = parsedCalls.Any(call => string.IsNullOrEmpty(call.Name));
+            var incomplete = parsedCalls.Any(call => call.Error is not null);
+            const string retry = "Check the results of earlier calls before retrying. Retry the failed call with complete JSON and at most 6000 content characters. Use write_file only to start a file and append_file for subsequent chunks; do not overwrite earlier successful work.";
+            if (incomplete) logger.LogWarning("Rejected incomplete or invalid model tool calls. Missing name: {MissingName}; reasons: {Reasons}", missingName, string.Join("; ", parsedCalls.Where(call => call.Error is not null).Select(call => call.Error)));
+            foreach (var call in parsedCalls.Where(call => !string.IsNullOrEmpty(call.Name)))
+                await Send(new { type = "tool_call", id = call.Id, name = call.Name, args = call.Arguments, error = call.Error is not null ? call.Error + " " + retry : null }, cancellationToken);
+            if (missingName) await Send(new { type = "tool_retry", message = "A tool call was incomplete and had no name. " + retry }, cancellationToken);
             await Send(new { type = "done", finishReason }, cancellationToken);
             finished = complete;
         }
@@ -147,15 +147,37 @@ public sealed class AgentController(LocalModelClient client, VisionClient vision
         }
         finally
         {
-            try { if (finished && !cancellationToken.IsCancellationRequested) runtime.ScheduleStop(); else runtime.Stop(); }
-            catch (Exception exception) { logger.LogError(exception, "Failed to stop the model after a request"); }
-            finally { gate.Semaphore.Release(); }
+            heartbeatCancellation.Cancel();
+            await heartbeat;
+            if (enteredGate)
+            {
+                try { if (finished && !cancellationToken.IsCancellationRequested) runtime.ScheduleStop(); else runtime.Stop(); }
+                catch (Exception exception) { logger.LogError(exception, "Failed to stop the model after a request"); }
+                finally { gate.Semaphore.Release(); }
+            }
         }
     }
 
     private async Task Send(object value, CancellationToken cancellationToken)
     {
-        await Response.WriteAsync("data: " + JsonSerializer.Serialize(value, JsonOptions) + "\n\n", cancellationToken);
-        await Response.Body.FlushAsync(cancellationToken);
+        await WriteEvent("data: " + JsonSerializer.Serialize(value, JsonOptions) + "\n\n", cancellationToken);
+    }
+
+    private async Task WriteEvent(string data, CancellationToken cancellationToken)
+    {
+        await responseLock.WaitAsync(cancellationToken);
+        try { await Response.WriteAsync(data, cancellationToken); await Response.Body.FlushAsync(cancellationToken); }
+        finally { responseLock.Release(); }
+    }
+
+    private async Task KeepAlive(CancellationToken cancellationToken)
+    {
+        try
+        {
+            using var timer = new PeriodicTimer(TimeSpan.FromSeconds(15));
+            while (await timer.WaitForNextTickAsync(cancellationToken)) await WriteEvent(": keep-alive\n\n", cancellationToken);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested) { }
+        catch (IOException exception) { logger.LogDebug(exception, "Unable to send stream keep-alive"); }
     }
 }

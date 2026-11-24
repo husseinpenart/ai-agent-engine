@@ -11,7 +11,7 @@ public sealed class ModelOptions
     public int ContextSize { get; set; } = 8192;
     public int MaxOutputTokens { get; set; } = 4096;
     public int VisionContextSize { get; set; } = 4096;
-    public int VisionMaxOutputTokens { get; set; } = 1024;
+    public int VisionMaxOutputTokens { get; set; } = 2048;
     public int VisionGpuLayers { get; set; } = 99;
     public int RecentMessages { get; set; } = 8;
     public string GpuLayers { get; set; } = "auto";
