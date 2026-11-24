@@ -46,4 +46,16 @@ C:\Users\Husseinpenart\Desktop\ai-agent\bin\validation\Microsoft.OpenApi.dll
 C:\Users\Husseinpenart\Desktop\ai-agent\bin\validation\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Husseinpenart\Desktop\ai-agent\bin\validation\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Husseinpenart\Desktop\ai-agent\bin\validation\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\appsettings.Development.json
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\appsettings.json
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\ai-agent.staticwebassets.endpoints.json
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\ai-agent.exe
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\ai-agent.deps.json
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\ai-agent.runtimeconfig.json
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\ai-agent.dll
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\ai-agent.pdb
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\Microsoft.OpenApi.dll
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Husseinpenart\Desktop\ai-agent\.build-check\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Husseinpenart\Desktop\ai-agent\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

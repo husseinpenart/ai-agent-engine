@@ -49,6 +49,7 @@ public sealed class AgentController(LocalModelClient client, ModelProcess runtim
             await using var stream = await upstream.Content.ReadAsStreamAsync(cancellationToken);
             using var reader = new StreamReader(stream);
             var complete = false;
+            string? finishReason = null;
             var toolCalls = new SortedDictionary<int, (StringBuilder Id, StringBuilder Name, StringBuilder Arguments)>();
             while (await reader.ReadLineAsync(cancellationToken) is { } line)
             {
@@ -58,6 +59,7 @@ public sealed class AgentController(LocalModelClient client, ModelProcess runtim
                 using var document = JsonDocument.Parse(data);
                 var root = document.RootElement;
                 if (root.TryGetProperty("error", out var error)) { await Send(new { type = "error", message = error.ToString() }, cancellationToken); return; }
+                if (root.TryGetProperty("choices", out var finishChoices) && finishChoices.GetArrayLength() > 0 && finishChoices[0].TryGetProperty("finish_reason", out var finish) && finish.ValueKind == JsonValueKind.String) finishReason = finish.GetString();
                 if (root.TryGetProperty("choices", out var choices) && choices.GetArrayLength() > 0 && choices[0].TryGetProperty("delta", out var delta))
                 {
                     if (delta.TryGetProperty("content", out var content) && content.ValueKind == JsonValueKind.String && content.GetString() is { Length: > 0 } text) await Send(new { type = "text", delta = text }, cancellationToken);
@@ -77,12 +79,25 @@ public sealed class AgentController(LocalModelClient client, ModelProcess runtim
                 }
             }
             if (!complete) { await Send(new { type = "error", message = "Model stream ended unexpectedly." }, cancellationToken); return; }
+            var parsedCalls = new List<(string Id, string Name, JsonElement Args, bool Invalid)>();
             foreach (var call in toolCalls.Values)
             {
-                using var arguments = JsonDocument.Parse(call.Arguments.Length == 0 ? "{}" : call.Arguments.ToString());
-                await Send(new { type = "tool_call", id = call.Id.Length == 0 ? Guid.NewGuid().ToString("N") : call.Id.ToString(), name = call.Name.ToString(), args = arguments.RootElement }, cancellationToken);
+                if (call.Name.Length == 0) { await Send(new { type = "error", message = "Model returned an incomplete tool call without a tool name. Please retry with a smaller task." }, cancellationToken); return; }
+                var invalid = false;
+                JsonElement args;
+                try
+                {
+                    using var arguments = JsonDocument.Parse(call.Arguments.Length == 0 ? "{}" : call.Arguments.ToString());
+                    args = arguments.RootElement.Clone();
+                    invalid = args.ValueKind != JsonValueKind.Object;
+                }
+                catch (JsonException) { args = JsonSerializer.SerializeToElement(new { }); invalid = true; }
+                parsedCalls.Add((call.Id.Length == 0 ? Guid.NewGuid().ToString("N") : call.Id.ToString(), call.Name.ToString(), args, invalid));
             }
-            await Send(new { type = "done" }, cancellationToken);
+            var incomplete = finishReason == "length" || parsedCalls.Any(call => call.Invalid);
+            foreach (var call in parsedCalls)
+                await Send(new { type = "tool_call", id = call.Id, name = call.Name, args = incomplete ? JsonSerializer.SerializeToElement(new { }) : call.Args, error = incomplete ? "Tool call was incomplete or invalid and was not executed. Retry with much smaller chunks; use write_file for the first chunk and append_file for subsequent chunks." : null }, cancellationToken);
+            await Send(new { type = "done", finishReason }, cancellationToken);
         }
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested) { }
         catch (Exception exception)
