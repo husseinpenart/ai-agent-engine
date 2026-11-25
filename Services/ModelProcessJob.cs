@@ -18,12 +18,21 @@ internal sealed class ModelProcessJob : IDisposable
         if (handle.IsInvalid) throw new Win32Exception(Marshal.GetLastWin32Error(), "Could not create model process job");
         try
         {
-            var limits = new ExtendedLimitInformation { BasicLimitInformation = new BasicLimitInformation { LimitFlags = 0x2000 } };
-            if (!SetInformationJobObject(handle, 9, ref limits, (uint)Marshal.SizeOf<ExtendedLimitInformation>())) throw new Win32Exception(Marshal.GetLastWin32Error(), "Could not configure model process job");
-            if (!AssignProcessToJobObject(handle, process.Handle)) throw new Win32Exception(Marshal.GetLastWin32Error(), "Could not attach model process to job");
+            var limits = new ExtendedLimitInformation
+            {
+                BasicLimitInformation = new BasicLimitInformation { LimitFlags = 0x2000 }
+            };
+            if (!SetInformationJobObject(handle, 9, ref limits, (uint)Marshal.SizeOf<ExtendedLimitInformation>()))
+                throw new Win32Exception(Marshal.GetLastWin32Error(), "Could not configure model process job");
+            if (!AssignProcessToJobObject(handle, process.Handle))
+                throw new Win32Exception(Marshal.GetLastWin32Error(), "Could not attach model process to job");
             return new ModelProcessJob(handle);
         }
-        catch { handle.Dispose(); throw; }
+        catch
+        {
+            handle.Dispose();
+            throw;
+        }
     }
 
     public void Dispose() => handle.Dispose();
