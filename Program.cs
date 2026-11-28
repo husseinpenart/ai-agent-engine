@@ -2,20 +2,29 @@ using ai_agent.Services;
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.WebHost.UseUrls("http://127.0.0.1:5000");
+
+var urls = builder.Configuration["Urls"];
+if (!string.IsNullOrWhiteSpace(urls))
+{
+    builder.WebHost.UseUrls(urls);
+}
+else
+{
+    builder.WebHost.UseUrls("http://127.0.0.1:5000");
+}
 
 builder.Services.Configure<ModelOptions>(builder.Configuration.GetSection("Model"));
-builder.Services.AddHttpClient<LocalModelClient>(client => client.Timeout = Timeout.InfiniteTimeSpan);
-builder.Services.AddHttpClient<VisionClient>(client => client.Timeout = Timeout.InfiniteTimeSpan);
+builder.Services.AddSingleton<LocalModelClient>();
+builder.Services.AddSingleton<VisionClient>();
 builder.Services.AddSingleton<ConversationContext>();
 builder.Services.AddSingleton<ModelProcess>();
 builder.Services.AddSingleton<InferenceGate>();
-
+builder.Services.AddSingleton<WorkspaceToolRunner>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy
-    .WithOrigins("http://localhost:1420", "http://127.0.0.1:1420", "tauri://localhost", "http://tauri.localhost")
+    .AllowAnyOrigin()
     .AllowAnyHeader()
     .AllowAnyMethod()));
 
@@ -95,4 +104,4 @@ if (!string.IsNullOrWhiteSpace(previewDirectory))
 }
 
 app.MapControllers();
-app.Run();
+app.Run();  

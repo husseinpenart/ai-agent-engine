@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\localmodelclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\localmodelclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\controllers\\agentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:controllers\\agentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\toolcallvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\toolcallvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\modeloptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\modeloptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\modelprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\modelprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\models\\chatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:models\\chatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\editmatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\editmatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\controllers\\agentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:controllers\\agentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\modelprocessjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\modelprocessjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\localmodelclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\localmodelclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\toolcallparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\toolcallparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\toolcallvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\toolcallvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\visionclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,20 +47,28 @@
       "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\modelprocesslease.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\modelprocessjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\modelprocessjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\modeloptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\modeloptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\inprocessmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\inprocessmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\conversationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\conversationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\services\\workspacetoolrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:services\\workspacetoolrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\models\\chatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|solutionrelative:models\\chatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B0E51AA-3AC3-70F0-BE80-BB5D242052D2}|ai-agent.csproj|c:\\users\\husseinpenart\\desktop\\ai-agent\\modelfile||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -62,121 +82,108 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AgentController.cs",
-              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Controllers\\AgentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AgentController.cs",
-              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Controllers\\AgentController.cs",
-              "RelativeToolTip": "Controllers\\AgentController.cs",
-              "ViewState": "AgIAAIoBAAAAAAAAAAAAALYBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-25T17:03:12.538Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "VisionClient.cs",
-              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\VisionClient.cs",
-              "RelativeDocumentMoniker": "Services\\VisionClient.cs",
-              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\VisionClient.cs",
-              "RelativeToolTip": "Services\\VisionClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-25T17:02:59.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ToolCallValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ToolCallValidator.cs",
-              "RelativeDocumentMoniker": "Services\\ToolCallValidator.cs",
-              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ToolCallValidator.cs",
-              "RelativeToolTip": "Services\\ToolCallValidator.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAqwFUAAAABAAAAAAAAAA==",
+              "Title": "EditMatcher.cs",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\EditMatcher.cs",
+              "RelativeDocumentMoniker": "Services\\EditMatcher.cs",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\EditMatcher.cs",
+              "RelativeToolTip": "Services\\EditMatcher.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwv00AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-25T16:59:13.694Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ChatRequest.cs",
-              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Models\\ChatRequest.cs",
-              "RelativeDocumentMoniker": "Models\\ChatRequest.cs",
-              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Models\\ChatRequest.cs",
-              "RelativeToolTip": "Models\\ChatRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-25T16:59:19.934Z",
+              "WhenOpened": "2026-11-28T20:18:27.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "ToolCallParser.cs",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ToolCallParser.cs",
+              "RelativeDocumentMoniker": "Services\\ToolCallParser.cs",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ToolCallParser.cs",
+              "RelativeToolTip": "Services\\ToolCallParser.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAYwI8AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-28T20:17:25.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "InProcessModel.cs",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\InProcessModel.cs",
+              "RelativeDocumentMoniker": "Services\\InProcessModel.cs",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\InProcessModel.cs",
+              "RelativeToolTip": "Services\\InProcessModel.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAIwGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-28T20:09:00.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "ModelProcessLease.cs",
               "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelProcessLease.cs",
               "RelativeDocumentMoniker": "Services\\ModelProcessLease.cs",
               "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelProcessLease.cs",
               "RelativeToolTip": "Services\\ModelProcessLease.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAmwFwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwFwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-25T16:59:14.209Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "ModelProcessJob.cs",
               "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelProcessJob.cs",
               "RelativeDocumentMoniker": "Services\\ModelProcessJob.cs",
               "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelProcessJob.cs",
               "RelativeToolTip": "Services\\ModelProcessJob.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwEoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-25T16:59:07.647Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "ModelProcess.cs",
               "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelProcess.cs",
               "RelativeDocumentMoniker": "Services\\ModelProcess.cs",
               "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelProcess.cs",
               "RelativeToolTip": "Services\\ModelProcess.cs",
-              "ViewState": "AgIAAO8BAAAAAAAAAAAmwB4CAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAADgv10AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-25T16:59:02.41Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "LocalModelClient.cs",
               "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\LocalModelClient.cs",
               "RelativeDocumentMoniker": "Services\\LocalModelClient.cs",
               "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\LocalModelClient.cs",
               "RelativeToolTip": "Services\\LocalModelClient.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAqwGkAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-25T16:58:51.115Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ConversationContext.cs",
               "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ConversationContext.cs",
               "RelativeDocumentMoniker": "Services\\ConversationContext.cs",
               "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ConversationContext.cs",
               "RelativeToolTip": "Services\\ConversationContext.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAIwE0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwEwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-25T16:58:44.567Z",
               "EditorCaption": ""
@@ -184,19 +191,110 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ModelOptions.cs",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelOptions.cs",
+              "RelativeDocumentMoniker": "Services\\ModelOptions.cs",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelOptions.cs",
+              "RelativeToolTip": "Services\\ModelOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-23T18:15:45.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ToolCallValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ToolCallValidator.cs",
+              "RelativeDocumentMoniker": "Services\\ToolCallValidator.cs",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ToolCallValidator.cs",
+              "RelativeToolTip": "Services\\ToolCallValidator.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwFUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-25T16:59:13.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AgentController.cs",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Controllers\\AgentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AgentController.cs",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Controllers\\AgentController.cs",
+              "RelativeToolTip": "Controllers\\AgentController.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAADwv+QAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-25T17:03:12.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-11-25T16:58:20.548Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
+              "Title": "WorkspaceToolRunner.cs",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\WorkspaceToolRunner.cs",
+              "RelativeDocumentMoniker": "Services\\WorkspaceToolRunner.cs",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\WorkspaceToolRunner.cs",
+              "RelativeToolTip": "Services\\WorkspaceToolRunner.cs",
+              "ViewState": "AgIAAD8CAAAAAAAAAAAuwH4CAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-27T12:41:36.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAkwGoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-23T18:15:55.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-28T20:08:21.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VisionClient.cs",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\VisionClient.cs",
+              "RelativeDocumentMoniker": "Services\\VisionClient.cs",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\VisionClient.cs",
+              "RelativeToolTip": "Services\\VisionClient.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAwGAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-25T17:02:59.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Modelfile",
               "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Modelfile",
               "RelativeDocumentMoniker": "Modelfile",
@@ -208,29 +306,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "ChatRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Models\\ChatRequest.cs",
+              "RelativeDocumentMoniker": "Models\\ChatRequest.cs",
+              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Models\\ChatRequest.cs",
+              "RelativeToolTip": "Models\\ChatRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-23T18:15:55.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ModelOptions.cs",
-              "DocumentMoniker": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelOptions.cs",
-              "RelativeDocumentMoniker": "Services\\ModelOptions.cs",
-              "ToolTip": "C:\\Users\\Husseinpenart\\Desktop\\ai-agent\\Services\\ModelOptions.cs",
-              "RelativeToolTip": "Services\\ModelOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-23T18:15:45.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-25T16:59:19.934Z"
             }
           ]
         }

@@ -8,8 +8,8 @@ public sealed class ConversationContext(IOptions<ModelOptions> options)
 {
     public (List<ChatMessage> Recent, string Summary) Prepare(List<ChatMessage> messages)
     {
-        var limit = Math.Clamp(options.Value.RecentMessages, 4, 40);
-        var toolLimit = Math.Clamp(options.Value.ToolResultMaxChars, 512, 12000);
+        var limit = Math.Clamp(options.Value.RecentMessages, 4, 60);
+        var toolLimit = Math.Max(512, options.Value.ToolResultMaxChars);
 
         if (messages.Count <= limit)
         {
@@ -30,14 +30,13 @@ public sealed class ConversationContext(IOptions<ModelOptions> options)
             recent.Insert(0, messages[latestUser]);
         }
 
-        // اطمینان از اینکه هیچ پیام tool بدون پیام assistant قبلیِ دارای ToolCalls در ابتدای recent نماند
         while (recent.Count > 0 && recent[0].Role == "tool")
         {
             recent.RemoveAt(0);
         }
 
         var summary = new StringBuilder();
-        for (var index = Math.Max(0, start - 12); index < start && summary.Length < 700; index++)
+        for (var index = Math.Max(0, start - 16); index < start && summary.Length < 1200; index++)
         {
             if (index == latestUser && recent.FirstOrDefault() == messages[index])
             {
@@ -46,9 +45,9 @@ public sealed class ConversationContext(IOptions<ModelOptions> options)
 
             var message = messages[index];
             var content = (message.Content ?? "").Replace('\r', ' ').Replace('\n', ' ').Trim();
-            if (content.Length > 140)
+            if (content.Length > 200)
             {
-                content = content[..140] + "…";
+                content = content[..200] + "…";
             }
 
             if (content.Length > 0)
@@ -62,9 +61,9 @@ public sealed class ConversationContext(IOptions<ModelOptions> options)
             }
         }
 
-        if (summary.Length > 800)
+        if (summary.Length > 1400)
         {
-            summary.Length = 800;
+            summary.Length = 1400;
         }
 
         return (LimitToolResults(recent, toolLimit), summary.ToString());
